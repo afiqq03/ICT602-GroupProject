@@ -5,10 +5,14 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'firebase_options.dart';
 import 'screens/login_screen.dart';
 import 'screens/register_screen.dart';
+<<<<<<< HEAD
 import 'screens/map_screen.dart';
 import 'screens/hospitals_screen.dart';
 import 'screens/about_screen.dart';
 import 'package:geolocator/geolocator.dart';
+=======
+import 'screens/hospital_tracker_screen.dart';
+>>>>>>> 8f0ee4fd60b3387baa8f6b3f3ec7142aec7d815e
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -222,6 +226,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
+<<<<<<< HEAD
       body: _isLoadingLocation && _currentIndex != 2
           ? const Center(child: CircularProgressIndicator())
           : pages[_currentIndex],
@@ -242,6 +247,48 @@ class _HomePageState extends State<HomePage> {
             label: 'About',
           ),
         ],
+=======
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            StreamBuilder<DocumentSnapshot>(
+              stream: FirebaseFirestore.instance
+                  .collection('users')
+                  .doc(FirebaseAuth.instance.currentUser!.uid)
+                  .snapshots(),
+              builder: (context, snapshot) {
+                if (snapshot.hasError) {
+                  return const Center(child: Text('Something went wrong'));
+                }
+
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return const Center(child: CircularProgressIndicator());
+                }
+
+                final userData = snapshot.data?.data() as Map<String, dynamic>?;
+                final name = userData?['name'] ?? 'User';
+
+                return Text(
+                  'Welcome, $name!',
+                  style: const TextStyle(fontSize: 24),
+                );
+              },
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const HospitalTrackerScreen(),
+                  ),
+                );
+              },
+              child: const Text('Find Nearby Hospitals'),
+            ),
+          ],
+        ),
+>>>>>>> 8f0ee4fd60b3387baa8f6b3f3ec7142aec7d815e
       ),
     );
   }

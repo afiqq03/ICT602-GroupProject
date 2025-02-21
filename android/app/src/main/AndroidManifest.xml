@@ -1,7 +1,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <uses-permission android:name="android.permission.INTERNET"/>
+<<<<<<< HEAD
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+=======
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+>>>>>>> 8f0ee4fd60b3387baa8f6b3f3ec7142aec7d815e
     <application
         android:label="Emergency Locator"
         android:name="${applicationName}"
@@ -34,8 +39,13 @@
             android:name="flutterEmbedding"
             android:value="2" />
         <meta-data
+<<<<<<< HEAD
     android:name="com.google.android.geo.API_KEY"
     android:value="@string/MAPS_API_KEY"/>
+=======
+            android:name="com.google.android.geo.API_KEY"
+            android:value="YOUR_GOOGLE_MAPS_API_KEY"/>
+>>>>>>> 8f0ee4fd60b3387baa8f6b3f3ec7142aec7d815e
     </application>
     <!-- Required to query activities that can process text, see:
          https://developer.android.com/training/package-visibility and
