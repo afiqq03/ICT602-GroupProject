@@ -5,7 +5,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 class RegisterScreen extends StatefulWidget {
   final VoidCallback onShowLogin;
   
-  const RegisterScreen({Key? key, required this.onShowLogin}) : super(key: key);
+  const RegisterScreen({super.key, required this.onShowLogin});
 
   @override
   State<RegisterScreen> createState() => _RegisterScreenState();

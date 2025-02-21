@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 
 class LoginScreen extends StatefulWidget {
   final VoidCallback onShowRegister;
   
-  const LoginScreen({Key? key, required this.onShowRegister}) : super(key: key);
+  const LoginScreen({super.key, required this.onShowRegister});
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
