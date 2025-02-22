@@ -33,7 +33,7 @@ A Flutter application that helps users find nearby hospitals in emergency situat
 ### Installation
 
 1. Clone the repository
-- git clone https://github.com/yourusername/emergency-hospital-locator.git
+- git clone https://github.com/yourusername/ICT602-GroupProject
 
 ## Project Structure 📁
 lib/
